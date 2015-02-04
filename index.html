@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>后台设计规范</title>
+	<link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="css/normal.css">
+	<link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+	<div class="navbar navbar-default navbar-fixed-top">
+		<ul class="container nav nav-tabs">
+			<li><a href="#layout">排版</a></li>
+			<li><a href="#forms">表单</a></li>
+		</ul>
+	</div>
+	<div class="content">
+	<h1 id="layout"><strong>排版</strong></h1>
+	<hr/>
+	<h2>标题</h2>
+	<p>HTML 中的所有标题标签，<mark>&lt;h1&gt;</mark> 到 <mark>&lt;h6&gt;</mark> 均可使用。另外，还提供了 .h1 到 .h6 类，为的是给内联（inline）属性的文本赋予标题的样式。</p>
+	<p>P.S. <mark>&lt;h2&gt;</mark> 宋体加粗效果不明显，暂时替换成微软雅黑。</p>
+	<div class="demo">
+		
+	<div class="example">
+		<h4>实例：</h4>
+		<div class="font-size"><h1>h1.最大文字<small class="pull-right">18px 微软雅黑</small></h1></div>
+		<div class="font-size"><h2>h2.次级文字<small class="pull-right">16px 微软雅黑 加粗</small></h2></div>
+		<div class="font-size"><h3>h3.中规文字<small class="pull-right">16px 宋体</small></h3></div>
+		<div class="font-size"><h4>h4.常规文字<small class="pull-right">14px 宋体</small></h4></div>
+		<div class="font-size"><h5>h5.最小文字<small class="pull-right">12px 宋体</small></h5></div>
+		<div class="font-size"><h6>h6.文字<small class="pull-right">10px 宋体</small></h6></div>
+		<div class="font-size inline-title"><span class="h1">标题1</span></div>
+		<div class="font-size inline-title"><span class="h2">标题2</span></div>
+		<div class="font-size inline-title"><span class="h3">标题3</span></div>
+		<div class="font-size inline-title"><span class="h4">标题4</span></div>
+		<div class="font-size inline-title"><span class="h5">标题5</span></div>
+		<div class="font-size inline-title"><span class="h6">标题6</span></div>
+	</div>
+	<div class="code-example">
+		<pre>
+&lt;h1&gt;h1.最大文字&lt;/h1&gt;
+&lt;h2&gt;h2.次级文字&lt;/h2&gt;
+&lt;h3&gt;h3.中规文字&lt;/h3&gt;
+&lt;h4&gt;h4.常规文字&lt;/h4&gt;
+&lt;h5&gt;h5.最小文字&lt;/h5&gt;
+&lt;h6&gt;h6.文字&lt;/h6&gt;
+--------按功能--------
+&lt;span&nbsp;class="h1"&gt;标题1&lt;/span&gt;          
+&lt;span&nbsp;class="h2"&gt;标题2&lt;/span&gt;           
+&lt;span&nbsp;class="h3"&gt;标题3&lt;/span&gt;
+&lt;span&nbsp;class="h4"&gt;标题4&lt;/span&gt;          
+&lt;span&nbsp;class="h5"&gt;标题5&lt;/span&gt;           
+&lt;span&nbsp;class="h6"&gt;标题6&lt;/span&gt;</pre>
+	</div>
+</div>
+	<p>在标题内还可以包含 <mark>&lt;small&gt;</mark> 标签或赋予 .small 类的元素，可以用来标记副标题。</p>
+	<div class="demo">
+	<div class="example">
+		<h4>实例：</h4>
+		<div class="font-size">
+			<h1>h1.最大文字<small>18px 微软雅黑</small></h1>
+		</div>
+		<div class="font-size">
+			<h2>h2.次级文字<small>16px 微软雅黑 加粗</small></h2>
+		</div>
+		<div class="font-size">
+			<h3>h3.中规文字<small>16px 宋体</small></h3>
+		</div>
+		<div class="font-size">
+			<h4>h4.常规文字<small>14px 宋体</small></h4>
+		</div>
+		<div class="font-size">
+			<h5>h5.最小文字<small>12px 宋体</small></h5>
+		</div>
+		<div class="font-size">
+			<h6>h6.文字<small>10px 宋体</small></h6>
+		</div>
+	</div>
+	<div class="code-example">
+		<pre>
+&lt;h1&gt;h1.最大文字&lt;small&gt;18px 微软雅黑&lt;/small&gt;&lt;/h1&gt;
+&lt;h2&gt;h2.次级文字&lt;small&gt;16px 微软雅黑 加粗&lt;/small&gt;&lt;/h2&gt;
+&lt;h3&gt;h3.中规文字&lt;small&gt;16px 宋体&lt;/small&gt;&lt;/h3&gt;
+&lt;h4&gt;h4.常规文字&lt;small&gt;14px 宋体&lt;/small&gt;&lt;/h4&gt;
+&lt;h5&gt;h5.最小文字&lt;small&gt;12px 宋体&lt;/small&gt;&lt;/h5&gt;
+&lt;h6&gt;h6.文字&lt;small&gt;10px 宋体&lt;/small&gt;&lt;/h6&gt;</pre>
+	</div>
+	</div>
+	<h2>字体颜色</h2>
+	<p>将全局文字 color 设置为 <mark><code>#474747</code></mark>，这些属性直接赋予 <mark>&lt;body&gt;</mark> 元素和所有文本元素。</p>
+	<div class="demo">
+		<div class="example">
+		<h4>实例：</h4>
+		<p>1.常规文字：&nbsp;&nbsp;&nbsp;&nbsp;<span class="color-block color-1"></span>&nbsp;<span class="color-value">#474747</span></p>
+		<p>2.次级文字：&nbsp;&nbsp;&nbsp;&nbsp;<span class="color-block color-2"></span>&nbsp;<span class="color-value text-success">#24bb32</span></p>
+		<p>3.辅助文字：&nbsp;&nbsp;&nbsp;&nbsp;<span class="color-block color-3"></span>&nbsp;<span class="color-value text-primary">#737373</span></p>
+		<p>4.重要文字：&nbsp;&nbsp;&nbsp;&nbsp;<span class="color-block color-4"></span>&nbsp;<span class="color-value text-warning">#ff4800</span></p>
+		<p>5.最弱文字：&nbsp;&nbsp;&nbsp;&nbsp;<span class="color-block color-5"></span>&nbsp;<span class="color-value text-info">#a7a7a7</span></p>
+		<p>6.超链接文字：&nbsp;<span class="color-block color-6"></span>&nbsp;<span class="color-value text-link">#0075d8</span></p>
+	</div>
+	<div class="code-example">
+		<pre>
+&lt;p&gt;1.常规文字：&lt;span&gt;#474747&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;2.次级文字：&lt;span class="text-success"&gt;#24bb32&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;3.辅助文字：&lt;span class="text-primary"&gt;#737373&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;4.重要文字：&lt;span class="text-warning"&gt;#ff4800&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;5.最弱文字：&lt;span class="text-info"&gt;#a7a7a7&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;6.超链接文字：&lt;span class="text-link"&gt;#0075d8&lt;/span&gt;&lt;/p&gt;</pre>
+	</div>
+</div>
+	<h2>页面主体</h2>
+	<p>将全局 font-size 设置为 14px，line-height 设置为 1.7。这些属性直接赋予 <mark>&lt;body&gt;</mark> 元素和所有段落元素。另外，<mark>&lt;p&gt;</mark> （段落）元素还被设置了2等于 1/2 行高（即 10px）的底部外边距（margin）。</p>
+	<div class="demo">
+	<div class="example">
+		<h4>实例：</h4>
+		<p>房态日历逻辑描述：</p>
+		<p>1、日历表格 </p>
+		<p>1）表格第一行显示30天的日期，点击日历图标在弹窗日历中选择开始日期，日历左右箭头切换上下一个月；周末日期与上班周日期区分；月份与节日提示</p>
+		<p>2）表格第一列显示所有客房，如房型“悦喜”有两件客房，则显示为：悦喜（1）和悦喜（2）</p>
+		<p>3）用不同色块表示客房的空余与否，已被预订或者入住为客满状态，空置的有房状态</p>
+		<p>2、更改房态交互</p>
+		<p>1）更改单日期房态，鼠标移至某日期某客房单元格显示focus框（移出单元格，focus框消失），单击单元格，focus框停留；双击单元格显示该单元格的开关房态按钮，点击开关按钮即可切换房态（点击按钮，按钮消失，切换房态色块）</p>
+		<p> 2）更改日期段房态，鼠标移至某日期某客房单元格显示focus框（移出单元格，focus框消失），单击单元格，focus框停留在开始日期；鼠标接着移到连续的单元格，对应单元格显示focus框，点击结束日期单元格，则在日期段显示一个房态开关按钮，点击按钮，同意关闭或者开启房源</p>
+		</p>
+	</div>
+	<div class="code-example">
+		<pre>&lt;p&gt;...&lt;/p&gt;</pre>
+	</div>
+	</div>
+
+	<h1 id="forms"><strong>表单</strong></h1>
+	<hr>
+	<h2>基本实例</h2>
+	<p>单独的表单控件会被自动赋予一些全局样式。所有设置了 .form-control 类的 <mark>&lt;input&gt;</mark>、<mark>&lt;textarea&gt;</mark> 和 <mark>&lt;select></mark> 元素都将被默认设置宽度属性为 width: 70%。所有 <mark>input [type="text"]</mark>元素高度设置为36px。 将 label 元素和前面提到的控件包裹在 <mark>.form-group</mark> 中可以获得最好的排列(margin-bottom: 28px)。</p>
+	<div class="demo">
+		<div class="example">
+			<h4>实例：</h4>
+			<form>
+				<div class="form-group">
+					<label><span class="text-warning">＊</span>我是输入框：</label>
+					<input class="form-control" type="text" placeholder="我是默认文本">
+					<span class="close-btn">x</span>
+				</div>
+				<div class="form-group">
+					<label><span class="text-warning">＊</span>我是一个长输入框：</label>
+					<input class="form-control" type="text" value="我是已输入文本">
+				</div>		
+				<div class="form-group">
+					<label><span class="text-warning">＊</span>我是一个单选框：</label>
+					<input id="radio-demo-1" type="radio" name="radio-demo"><label class="radio-inline" for="radio-demo-1">选项1</label>
+					<input id="radio-demo-2" type="radio" name="radio-demo"><label class="radio-inline" for="radio-demo-2">选项2</label>
+				</div>
+			</form>
+		</div>
+	<div class="code-example">
+<pre>
+&lt;div class="form-group"&gt;
+  &lt;label&gt;&lt;span class="text-warning"&gt;＊&lt;/span&gt;我是输入框：&lt;/label&gt;
+  &lt;input class="form-control" type="text" placeholder="我是默认文本"&gt;
+  &lt;span class="close-btn"&gt;x&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;label&gt;&lt;span class="text-warning"&gt;＊&lt;/span&gt;我是输入框：&lt;/label&gt;
+&lt;input class="form-control" type="text" value="我是已输入文本"&gt;
+
+&lt;label&gt;&lt;span class="text-warning"&gt;＊&lt;/span&gt;我是单选框：&lt;/label&gt;
+&lt;input id="radio-demo-1" type="radio" name="radio-demo"&gt;&lt;label class="radio-inline" for="radio-demo-1"&gt;选项1&lt;/label&gt;
+&lt;input id="radio-demo-2" type="radio" name="radio-demo"&gt;&lt;label class="radio-inline" for="radio-demo-2"&gt;选项2&lt;/label&gt;
+</pre>
+		</div>
+	</div>
+	
+	<h2>禁用状态</h2>
+	<p>为输入框设置 <mark>disabled</mark> 属性可以防止用户输入，并能对外观做一些修改，使其更直观。为输入框添加 <mark>.disabled</mark> 类，鼠标悬停效果变为不可点击。</p>
+	<p>当禁用单选框或复选框时，同时为对应的label标签加上 <mark>.disabled</mark> 类，label鼠标悬停效果变为不可点击。</p>
+	<div class="demo">
+		<div class="example">
+			<h4>实例：</h4>
+			<div class="form-group">
+				<label><span class="text-warning">＊</span>我是输入框：</label>
+				<input class="form-control disabled" type="text" placeholder="我是不可点击文本" disabled>
+			</div>
+			<div class="form-group">
+				<label><span class="text-warning">＊</span>我是单选框：</label>
+				<input id="radio-demo-3" type="radio" name="radio-demo" disabled><label class="radio-inline disabled" for="radio-demo-3">选项3</label>
+				<input id="radio-demo-4" type="radio" name="radio-demo" disabled><label class="radio-inline disabled" for="radio-demo-4">选项4</label>
+			</div>
+		</div>
+		<div class="code-example">
+<pre>
+&lt;label&gt;&lt;span class="text-warning"&gt;＊&lt;/span&gt;我是输入框：&lt;/label&gt;
+&lt;input class="form-control disabled" type="text" placeholder="我是不可点击文本" disabled&gt;
+
+&lt;label&gt;&lt;span class="text-warning"&gt;＊&lt;/span&gt;我是单选框：&lt;/label&gt;
+&lt;input id="radio-demo-1" type="radio" name="radio-demo"&gt;&lt;label for="radio-demo-1"&gt;选项1&lt;/label&gt;
+&lt;input id="radio-demo-2" type="radio" name="radio-demo" disabled&gt;&lt;label class="disabled radio-inline" for="radio-demo-2"&gt;选项2&lt;/label&gt;
+</pre>			
+		</div>
+	</div>
+
+	<h2>下拉选择</h2>
+	<p>为需要添加下拉选择样式的输入框添加一个 <mark>.dropdown-input</mark> 的 <mark>div</mark> 标签，为下拉图标添加 <mark>.dropdown-button</mark> 类，按钮样式不在此讨论。</p>
+	<div class="demo">
+		<div class="example">
+			<h4>实例：</h4>
+			<div class="form-group">
+				<label><span class="text-warning">＊</span>我是输入框：</label>
+				<div class="dropdown-input">
+					<input class="form-control" type="text" placeholder="我是可以下拉选择的输入框">
+					<span class="caret dropdown-button"></span>
+				</div>
+			</div>
+			<div class="form-group">
+				<label><span class="text-warning">＊</span>我是输入框：</label>
+				<div class="dropdown-input">
+					<input class="form-control" type="text" placeholder="我是可以下拉选择的输入框">
+					<button class="btn dropdown-button">按钮</button>
+				</div>
+			</div>
+		</div>
+		<div class="code-example">
+<pre>
+&lt;div class="form-group"&gt;
+&lt;label&gt;我是输入框：&lt;/label&gt;
+&lt;div class="dropdown-input"&gt;
+  &lt;input class="form-control" type="text" placeholder="我是可以下拉选择的输入框"&gt;
+  &lt;span class="caret dropdown-button"&gt;&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div class="dropdown-input"&gt;
+  &lt;input class="form-control" type="text" placeholder="我是可以下拉选择的输入框"&gt;
+  &lt;button class="btn dropdown-button"&gt;按钮&lt;/button&gt;
+&lt;/div&gt;
+</pre>
+		</div>
+	</div>
+	<h2>提示信息</h2>
+	<p>为 <mark>.form-group</mark> 设置了属性 <mark>position: relative</mark> ，提示信息(<mark>.tips-info</mark>)和错误提示信息(<mark>.error</mark>)为绝对定位。在有提示信息的情况下，如果出错，错误提示信息覆盖提示信息。</p>
+	<p>实例中为了体现效果，额外给输入框元素加上错误样式。</p>
+	<p>P.S. 给textarea的label添加 <mark>.textarea-label</mark> 的类，确保标签文字与输入框上方对齐。</p>
+	<div class="demo">
+		<div class="example">
+			<h4>实例：</h4>
+			<div class="form-group">
+					<label>我是输入框：</label>
+					<input id="checkbox-demo" type="checkbox" name="checkbox-demo"><label for="checkbox-demo">复选框</label>
+					<div class="form-group">
+						<label class="invisible textarea-label">我是输入框：</label>
+						<!-- <div class="help-block-group"> -->
+							<textarea class="form-control" name="textarea-demo" id="textarea-demo" rows="5" placeholder="这是一个文本区域"></textarea>
+							<label class="tips-info">这是提示信息</label>
+						<!-- </div> -->
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="textarea-label">我是输入框：</label>
+					<!-- <div class="help-block-group"> -->
+						<textarea class="form-control error" name="textarea-demo" id="textarea-demo" rows="5"></textarea>
+						<label class="error">这是错误提示信息</label>
+					<!-- </div> -->
+				</div>
+		</div>
+		<div class="code-example">
+<pre>
+&lt;label&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;我是输入框：&lt;/label&gt;
+&lt;input id="checkbox-demo" type="checkbox" name="checkbox-demo"&gt;&lt;label for="checkbox-demo"&gt;复选框&lt;/label&gt;
+&lt;div class="form-group"&gt;
+  &lt;label class="invisible textarea-label"&gt;我是输入框：&lt;/label&gt;
+  &lt;textarea class="form-control" name="textarea-demo" id="textarea-demo" rows="5"&gt;&lt;/textarea&gt;
+  &lt;label class="tips-info"&gt;这是提示信息&lt;/label&gt;
+&lt;/div&gt;
+
+&lt;label class="textarea-label"&gt;我是输入框：&lt;/label&gt;
+  &lt;textarea class="form-control error" name="textarea-demo" id="textarea-demo" rows="5" placeholder="这是一个文本区域"&gt;&lt;/textarea&gt;
+  &lt;label class="error"&gt;这是错误提示信息&lt;/label&gt;
+</pre>
+		</div>
+	</div>
+
+	<h2>样式2</h2>
+	<p>在 <mark>.multi-col-form</mark> 的块级元素下实现样式2的效果。用 <mark>.form-group-col</mark> 的块级元素将每一组label和input元素包裹起来（margin-bottom:28px）。</p>
+	<p>没有为input元素设置宽度。为了让input和label元素始终在同一列，可能需要额外的设置input的宽度和 .form-group-col的最小宽度。</p>
+	<p>按照规范图，将label宽度设置为122px，可能要按需更改。</p>
+	<div class="demo">
+		<div class="example">
+			<h4>实例：</h4>
+			<form>
+		<div class="multi-col-form">
+			<div class="form-group">
+				<div class="form-group-col">
+					<label>我是标题</label>
+					<div class="dropdown-input">
+						<input type="text" placeholder="默认文字">
+						<span class=" dropdown-button caret"></span>
+					</div>
+				</div>
+				<div class="form-group-col">
+					<label>我是标题</label>
+					<div class="dropdown-input">
+						<input type="text" placeholder="默认文字">
+						<span class=" dropdown-button caret"></span>
+					</div>
+				</div>
+				<div class="form-group-col">
+					<label>我是标题</label>
+					<div class="dropdown-input">
+						<input type="text" placeholder="默认文字">
+						<span class=" dropdown-button caret"></span>
+					</div>
+				</div>
+				<div class="form-group-col">
+					<label>标题</label>
+					<div class="dropdown-input">
+						<input type="text" placeholder="默认文字">
+						<span class=" dropdown-button caret"></span>
+					</div>
+				</div>
+				<div class="form-group-col">
+					<label>标题</label>
+					<div class="dropdown-input">
+						<input type="text" placeholder="默认文字">
+						<span class=" dropdown-button caret"></span>
+					</div>
+				</div>
+				<div class="form-group-col">
+					<label>我是标题</label>
+					<div class="dropdown-input">
+						<input type="text" placeholder="默认文字">
+						<span class=" dropdown-button caret"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+		</div>
+		<div class="code-example">
+<pre>
+&lt;div class="multi-col-form"&gt;
+  &lt;div class="form-group"&gt;
+    &lt;div class="form-group-col"&gt;
+    &lt;label&gt;我是标题&lt;/label&gt;
+      &lt;div class="dropdown-input"&gt;
+        &lt;input type="text" placeholder="默认文字"&gt;
+        &lt;span class=" dropdown-button caret"&gt;&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    ...
+&lt;/div&gt;
+</pre>
+		</div>
+	</div>
+	</div>
+</body>
+</html>
