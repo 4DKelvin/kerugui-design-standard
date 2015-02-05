@@ -1,0 +1,717 @@
+$content-message: #e11c58;
+$title-gradient-color1: white;
+$title-gradient-color2: rgb(242, 242, 242);
+$content-panel-border: #cfcfcf;
+$content-header-border-bottom: #e1e1e1;
+$table-outer-border: $content-panel-border;
+$table-inner-border: #e6e6e6;
+$content-body-color: #f3f3f3;
+$content-footer-background: #8E8E8E;
+$edit-body-border: #d7d7d7;
+$edit-body-background: #f9f9f9;
+$edit-body-label: #737373;
+$edit-body-title: #0f93d7;
+$tip-info-text: #a7a7a7;
+$download-link: #21ba2f;
+$post-script-text: #f5c073;
+$cover-img-bgcolor: #cbcbcb;
+//button color
+$button-blue-border: rgb(11, 130, 176);
+$button-blue-gradient-color1: rgb(70, 163, 223);
+$button-blue-gradient-color2: rgb(36, 128, 207);
+$button-green-border: rgb(49, 138, 30);
+$button-green-gradient-color1: rgb(118, 208, 49);
+$button-green-gradient-color2: rgb(87, 190, 43);
+$button-normal-border: rgb(199, 216, 228);
+$button-normal-gradient-color1: rgb(247, 249, 250);
+$button-normal-gradient-color2: rgb(232, 239, 244);
+$button-normal-text: rgba(117, 135, 150, .8);
+
+$table: table;
+$tr: table-row;
+$td: table-cell;
+//模态登录框
+$greenColor: rgb(27, 188, 65);
+$closeIconColor: rgb(169, 169, 169);
+$buttonColor: rgb(244, 244, 244);
+$buttonTextColor: rgb(123, 123, 123);
+$buttonBorderColor: rgb(227, 227, 227);
+$modalBorderColor: rgb(149, 149, 149);
+$dialog-radius: 6px;
+
+@mixin rgba-color($property, $rgb, $opacity) {
+  #{$property}: $rgb;
+  #{$property}: rgba($rgb, $opacity);
+}
+
+@mixin border-radius($top-left-radius, $top-right-radius, $bottom-right-radius, $bottom-left-radius) {
+  /* Safari 3-4, iOS 1-3.2, Android 1.6- */
+  -webkit-border-radius: $top-left-radius $top-right-radius $bottom-right-radius $bottom-left-radius;
+  /* Firefox 1-3.6 */
+  -moz-border-radius: $top-left-radius $top-right-radius $bottom-right-radius $bottom-left-radius;
+  /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
+  border-radius: $top-left-radius $top-right-radius $bottom-right-radius $bottom-left-radius;
+  /* Prevent background color leak outs */
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+
+@mixin all-border-radius($radius) {
+  /* Safari 3-4, iOS 1-3.2, Android 1.6- */
+  -webkit-border-radius: $radius;
+  /* Firefox 1-3.6 */
+  -moz-border-radius: $radius;
+  /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
+  border-radius: $radius;
+  /* Prevent background color leak outs */
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+
+@mixin box-shadow($h-shadow, $v-shadow, $blur, $spread, $color) {
+  /*  */
+  -webkit-box-shadow: $h-shadow $v-shadow $blur $spread $color;
+  -moz-box-shadow: $h-shadow $v-shadow $blur $spread $color;
+  box-shadow: $h-shadow $v-shadow $blur $spread $color;
+}
+
+@mixin rotate($deg) {
+  -moz-transform: rotate($deg);
+  -o-transform: rotate($deg);
+  -webkit-transform: rotate($deg);
+  -ms-transform: rotate($deg);
+}
+
+@mixin linear-background($color1, $percent1, $color2, $percent2) {
+  background: -webkit-linear-gradient(#{$color1} #{$percent1}, #{$color2} #{$percent2}); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#{$color1} #{$percent1}, #{$color2} #{$percent2}); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#{$color1} #{$percent1}, #{$color2} #{$percent2}); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#{$color1} #{$percent1}, #{$color2} #{$percent2}); /* Standard syntax (must be last) */
+}
+
+//reset
+* {
+  margin: 0;
+  padding: 0;
+  // transition: all 0.3s ease-out;
+  // -webkit-transition: all 0.3s ease-out;
+  &:focus, &:active, &:hover {
+    outline: none !important;
+  }
+}
+
+.add-link {
+  color: $greenColor;
+  font-size: 18px;
+  &:before {
+    content: '+';
+    padding: 5px;
+    font-size: 24px;
+    display: inline-block;
+  }
+}
+
+//button
+
+.btn.btn-lg {
+  min-width: 120px;
+  letter-spacing: 2px;
+}
+
+.btn.btn-blue {
+  @include box-shadow(0, 0, 3px, $content-body-color, inset);
+  @include all-border-radius(5px);
+  @include linear-background($button-blue-gradient-color1, 50%, $button-blue-gradient-color2, 100%);
+  border: 1px solid $button-blue-border;
+  color: $content-body-color;
+
+  &:active, &:hover, &:focus {
+    @include linear-background($button-blue-gradient-color2, 50%, $button-blue-gradient-color1, 100%);
+    border: 1px solid $button-blue-border;
+    color: $content-body-color;
+
+  }
+}
+
+.btn.btn-green {
+  @include box-shadow(0, 0, 3px, $content-body-color, inset);
+  @include all-border-radius(5px);
+  @include linear-background($button-green-gradient-color1, 50%, $button-green-gradient-color2, 100%);
+  border: 1px solid $button-green-border;
+  color: $content-body-color;
+
+  &:active, &:hover, &:focus {
+    @include linear-background($button-green-gradient-color2, 50%, $button-green-gradient-color1, 100%);
+    border: 1px solid $button-green-border;
+    color: $content-body-color;
+
+  }
+}
+
+.btn.btn-blue-light {
+  @include box-shadow(0, 0, 3px, $content-body-color, inset);
+  @include all-border-radius(5px);
+  @include linear-background($button-normal-gradient-color1, 50%, $button-normal-gradient-color2, 100%);
+  border: 1px solid $button-normal-border;
+  color: $button-normal-text;
+  &:active, &:hover, &:focus {
+    @include linear-background($button-normal-gradient-color2, 50%, $button-normal-gradient-color1, 100%);
+    border: 1px solid $button-normal-border;
+    color: $button-normal-text;
+  }
+  letter-spacing: 0;
+}
+
+//colors text
+.download {
+  &, &:hover, &:focus, &:active {
+    color: $download-link;
+  }
+}
+
+.important {
+  color: $content-message;
+  font-weight: bold;
+}
+
+//features
+
+.date-picker {
+  background-repeat: no-repeat;
+  background-position: 95% center;
+  background-size: 10px auto;
+  background-image: image-url('manage/calendar-dropdown.png') !important;
+  cursor: pointer;
+}
+
+.triangle {
+  float: left;
+  &, &:before {
+    position: relative;
+    left: -10px;
+    top: 19px;
+    width: 0px;
+    height: 0px;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 10px solid $edit-body-border;
+  }
+  &:before {
+    position: absolute;
+    content: "";
+    display: block;
+    left: 1px;
+    top: -15px;
+    border-right: 10px solid $edit-body-background;
+  }
+
+}
+
+.table-layout {
+  display: $table;
+  width: 100%;
+  .row {
+    margin: 0;
+    &:before, &:after {
+      display: none;
+    }
+    display: $tr;
+  }
+  .col {
+    padding: 15px 0;
+    display: $td;
+    vertical-align: middle;
+    position: relative;
+    &.top {
+      vertical-align: top;
+      padding-top: 20px;
+    }
+    &.bottom {
+      vertical-align: bottom;
+      padding-bottom: 20px;
+    }
+  }
+  &.list {
+    text-align: center;
+    border: solid 1px $table-outer-border;
+    margin-top: 45px;
+    .row {
+      .col {
+        border-right: solid 1px $table-inner-border;
+        border-bottom: solid 1px $table-inner-border;
+        &:last-child {
+          border-right: none;
+        }
+      }
+      &:last-child .col {
+        border-bottom: none;
+      }
+      &.head .col {
+        padding: 10px 0;
+        border-top: none;
+        @include linear-background($title-gradient-color1, 0%, $title-gradient-color2, 100%);
+      }
+    }
+  }
+}
+
+.content-wrap {
+  width: 1130px;
+  margin: 40px auto 0;
+  padding-bottom: 100px;
+  position: relative;
+  h4, h5 {
+    text-align: center;
+  }
+  h4 {
+    margin-bottom: 15px;
+    //分享好友订房享受优惠
+    font-size: 16px;
+  }
+  h5 {
+    color: $content-message;
+    font-size: 14px;
+  }
+}
+
+.content-nav-tab {
+  height: 45px;
+  li {
+    list-style-type: none;
+    width: 160px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    border: 1px solid $content-panel-border;
+    border-bottom: none;
+    a {
+      display: block;
+      color: black;
+      font-weight: bold;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  li + li {
+    border-left: none;
+  }
+  .current {
+    background-color: $download-link;
+    color: white;
+  }
+}
+
+.content-panel {
+  position: relative;
+  border: 1px solid $content-panel-border;
+  .content-header {
+    border-bottom: 1px solid $content-header-border-bottom;
+    h3 {
+      @include linear-background($title-gradient-color1, 0%, $title-gradient-color2, 100%);
+      margin: 0;
+      font-size: 18px;
+      padding-top: 15px;
+      padding-bottom: 14px;
+      padding-left: 20px;
+      border-bottom: solid 1px $title-gradient-color1;
+    }
+  }
+  .content-body {
+    &:before, &:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+    position: relative;
+    background: transparent;
+    padding: 20px 0;
+    &.content-well {
+      padding: 150px 0;
+      text-align: center;
+      p {
+        font-size: 18px;
+        padding-bottom: 40px;
+      }
+    }
+    .content-left {
+      margin: 10px 0 10px 20px;
+      width: 350px;
+      height: 600px;
+      + .message {
+        position: absolute;
+        width: 660px;
+        height: 55px;
+        line-height: 55px;
+        text-align: center;
+        color: $content-message;
+        font-size: 14px;
+        left: 420px;
+        margin-top: 10px;
+      }
+    }
+    .content-right {
+      width: 696px;
+      border: 1px solid $edit-body-border;
+      margin: 75px 20px 0 0;
+      padding-bottom: 20px;
+      background-color: $edit-body-background;
+    }
+  }
+  .content-footer {
+    padding: 10px;
+    text-align: center;
+    background-color: $content-footer-background;
+  }
+  .content-hr {
+    position: relative;
+    margin: 20px 5px;
+    border-top: 1px dashed $content-panel-border;
+    height: 0;
+    & > p {
+      display: block;
+      margin: 0 auto;
+      width: 100px;
+      text-align: center;
+      margin-top: -10px;
+      background-color: $edit-body-background;
+    }
+  }
+}
+
+.edit-body {
+  margin: 20px 35px;
+  background: $edit-body-background;
+  input[type="text"] {
+    padding-left: 10px;
+    height: 35px;
+    border: 1px solid $edit-body-border;
+  }
+  textarea {
+    border: 1px solid $edit-body-border;
+    resize: none;
+    padding-left: 10px;
+    padding-top: 10px;
+    width: 525px;
+    & + label.placeholder {
+      bottom: -5px;
+    }
+  }
+  h4, h5 {
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  h4 {
+    color: $edit-body-title;
+  }
+  h5 {
+    color: $post-script-text;
+  }
+  label {
+    margin: 0;
+    width: 75px;
+    white-space: nowrap;
+    text-align: right;
+    font-weight: normal;
+    color: $edit-body-label;
+    font-size: 14px;
+    &.error {
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      font-size: 14px;
+      display: block;
+      color: $content-message;
+      z-index: 2;
+      background: $edit-body-background;
+      width: 100%;
+      text-align: left;
+    }
+    &.placeholder {
+      text-align: left;
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      display: block;
+      font-size: 12px;
+      z-index: 1;
+      background: $edit-body-background;
+      width: 100%;
+    }
+  }
+  .tip-info {
+    display: inline;
+    margin: 0;
+    color: $tip-info-text;
+  }
+  .btn-append {
+    border: 1px dashed $content-panel-border;
+    position: relative;
+    text-align: center;
+    a {
+      display: inline-block;
+      color: $content-panel-border;
+      height: 28px;
+      margin: 6px;
+      position: relative;
+      padding-left: 35px;
+      line-height: 28px;
+    }
+    span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 26px;
+      height: 26px;
+      display: block;
+      line-height: 22px;
+      letter-spacing: -1px;
+      text-align: center;
+      font-size: 20px;
+      color: $content-panel-border;
+      border: 1px solid $content-panel-border;
+      @include all-border-radius(100px);
+    }
+    &:after {
+      display: table;
+      content: '';
+      clear: both;
+    }
+  }
+}
+
+.mobile-preview {
+  width: 320px;
+  height: 585px;
+  border: 1px solid $content-panel-border;
+  display: block;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  padding-top: 64px;
+  .mobile-title {
+    display: block;
+    width: 320px;
+    height: 64px;
+    background-image: image-url('manage/weixin-nav.png');
+    background-size: 320px 64px;
+    font-size: 18px;
+    color: $content-body-color;
+    line-height: 85px;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 100;
+  }
+}
+
+.waterfall-wrap {
+  .waterfall-item {
+    width: 320px;
+    position: absolute;
+  }
+}
+
+.pagination {
+  &:before, &:after {
+    display: table;
+    content: '';
+    clear: both;
+  }
+  float: right;
+  margin: 0 20px;
+}
+
+.selectable {
+  &:hover, &.selected {
+    position: relative;
+    &:before {
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+      background-image: image-url('manage/selected.png');
+      background-color: black;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: .6;
+      content: '';
+    }
+  }
+}
+
+//添加封面图片
+.add-cover-img {
+  .row {
+    margin-left: 0;
+  }
+  .cover-img, .cover-main-img {
+    background-color: $cover-img-bgcolor;
+    padding: 0;
+    img {
+      width: 100%;
+    }
+  }
+  .cover-main-img {
+    width: 260px;
+    height: 142px;
+  }
+  .cover-img {
+    width: 142px;
+    height: 142px;
+  }
+  .cover-img-btn {
+    padding-left: 20px;
+    position: relative;
+    & > .tip {
+      position: absolute;
+      bottom: -30px;
+      left: 15px;
+    }
+  }
+}
+
+.copy-link {
+  margin-bottom: 35px;
+  input {
+    @include all-border-radius(0);
+  }
+  button {
+    @extend .btn.btn-blue;
+    @include all-border-radius(0);
+    height: 35px;
+  }
+  p {
+    color: $tip-info-text;
+    position: absolute;
+    left: 0;
+    bottom: -35px;
+    font-size: 14px;
+  }
+}
+
+.btn-well {
+  @extend .btn.btn-blue;
+  padding-left: 45px;
+  padding-right: 45px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.modal {
+  z-index: 1150;
+  .modal-dialog.v2 {
+    .modal-content {
+      @include box-shadow(0, 0, 0, 0, 0);
+      overflow: hidden;
+      border: none;
+      &:before {
+        height: 5px;
+        width: 100%;
+        display: block;
+        content: '';
+        background: $greenColor;
+        @include border-radius($dialog-radius, $dialog-radius, 0, 0);
+      }
+
+      .modal-header {
+        background: white;
+        color: $greenColor;
+        @include border-radius($dialog-radius, $dialog-radius, $dialog-radius, $dialog-radius);
+        padding-top: 9px;
+        border: none;
+        button.close {
+          position: static;
+          width: inherit;
+          height: inherit;
+          background: transparent !important;
+          opacity: 0.2;
+          text-indent: 0;
+        }
+      }
+
+      .modal-body {
+        max-height: 450px;
+        overflow: scroll;
+        overflow-x: hidden;
+        a {
+          color: $greenColor;
+        }
+      }
+
+      .modal-footer {
+        @extend .noneBorder;
+        margin-top: 30px;
+        position: relative;
+        padding: 0;
+        button, a, input {
+          width: 50%;
+          background-color: $buttonColor;
+          @include border-radius(0, 0, 0, 0);
+          border: none;
+          background: $buttonColor;
+          color: $buttonTextColor;
+          height: 55px;
+          line-height: 40px;
+          font-size: 16px;
+          border: solid 1px $buttonBorderColor;
+          margin: 0;
+          float:left;
+        }
+
+        .btn-primary {
+          @include border-radius(0, 0, $dialog-radius, 0);
+          border-bottom-right-radius: 6px;
+          color: $greenColor;
+        }
+
+        .btn-default {
+          @include border-radius(0, 0, 0, $dialog-radius);
+        }
+      }
+    }
+  }
+}
+
+.modal-dialog.v2.qrcode {
+  width: 390px;
+  height: 345px;
+  margin-top: 80px;
+
+  .modal-body {
+    text-align: center;
+    overflow: hidden;
+
+    img {
+      padding: 1px;
+      border: solid 1px $content-panel-border;
+    }
+  }
+
+  .modal-footer {
+    margin-top: 10px;
+
+    .btn-primary {
+      width: 100%;
+      border-bottom-left-radius: $dialog-radius;
+    }
+  }
+}
+
+.modal-backdrop {
+  z-index: 1140;
+}
+
+.confirmModal {
+  z-index: 1150;
+}
