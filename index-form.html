@@ -5,26 +5,55 @@
 	<title>后台设计规范－表单</title>
 	<!-- <link rel="stylesheet" href="bootstrap/css/bootstrap/css/bootstrap.css"> -->
 	<link rel="stylesheet" href="bootstrap-self/css/bootstrap.css">
-	<link rel="stylesheet" href="bootstrap/css/normal.css">
-	<link rel="stylesheet" href="bootstrap/css/form.css">
+	<link rel="stylesheet" href="css/normal.css">
+	<link rel="stylesheet" href="css/form.css">
+	<link rel="stylesheet" href="css/layout.css">
+	<style>
+		/*宽度自定*/
+		.col input[type="text"],.col textarea,.dropdown-menu{
+			width: 675px;
+		}
+	</style>
 </head>
 <body>
 	<h1><strong>表单</strong></h1>
 	<hr>
+	<p>使用table布局来进行表单的布局。通过为表单添加 <mark>.table-layout</mark> , <mark>.row</mark> , <mark>.col</mark> 类给表单设置一些基本样式。</p>
 	<h2>基本实例</h2>
-	<p>单独的表单控件会被自动赋予一些全局样式。所有设置了 .form-control 类的 <mark>&lt;input&gt;</mark>、<mark>&lt;textarea&gt;</mark> 和 <mark>&lt;select></mark> 元素都将被默认设置宽度70%，可能需要另外修改。所有 <mark>input [type="text"]</mark>元素高度设置为36px。 将 label 元素和前面提到的控件包裹在 <mark>.form-group</mark> 中可以获得最好的排列(margin-bottom: 28px)。</p>
-	<p>为 <mark>&lt;input&gt;</mark>、<mark>&lt;textarea&gt;</mark> 和 <mark>&lt;select></mark> 元素设置了边框，高度，外边距，内边距等属性。</p>
+	<p>单独的表单控件会被自动赋予一些全局样式。所有 <mark>input [type="text"]</mark>元素高度设置为36px。所有设置了 .form-control 类的 <mark>&lt;input&gt;</mark>、<mark>&lt;textarea&gt;</mark> 和 <mark>&lt;select></mark> </p>元素都将被默认设置宽度70%，可能需要另外修改（但是在table中的宽度需另外设置）。
 	<p>为了实现 <mark>label</mark> 标签右对齐效果，固定label宽度： <mark>width:160px</mark> 。</p>
 	<div class="demo">
 		<div class="example">
 			<h4>实例：</h4>
 			<form>
-				<div class="form-group">
+				<div class="table-layout">
+					<div class="row">
+						<label class="col"><span class="text-warning">＊</span>我是输入框：</label>
+						<div class="col">
+							<input class="form-control" type="text" placeholder="我是默认文本">
+							<span class="close-btn">x</span>
+						</div>
+					</div>
+					<div class="row">
+						<label class="col"><span class="text-warning">＊</span>我是一个长输入框：</label>
+						<div class="col">
+							<input class="form-control" type="text" value="我是已输入文本">
+						</div>
+					</div>
+					<div class="row">
+						<label class="col"><span class="text-warning">＊</span>我是一个单选框：</label>
+						<div class="col">
+							<input id="radio-demo-1" type="radio" name="radio-demo"><label class="radio-inline" for="radio-demo-1">选项1</label>
+							<input id="radio-demo-2" type="radio" name="radio-demo"><label class="radio-inline" for="radio-demo-2">选项2</label>
+						</div>
+					</div>
+				</div>
+				<!-- <div class="form-group">
 					<label><span class="text-warning">＊</span>我是输入框：</label>
 					<input class="form-control" type="text" placeholder="我是默认文本">
 					<span class="close-btn">x</span>
-				</div>
-				<div class="form-group">
+				</div> -->
+				<!-- <div class="form-group">
 					<label><span class="text-warning">＊</span>我是一个长输入框：</label>
 					<input class="form-control" type="text" value="我是已输入文本">
 				</div>		
@@ -32,23 +61,30 @@
 					<label><span class="text-warning">＊</span>我是一个单选框：</label>
 					<input id="radio-demo-1" type="radio" name="radio-demo"><label class="radio-inline" for="radio-demo-1">选项1</label>
 					<input id="radio-demo-2" type="radio" name="radio-demo"><label class="radio-inline" for="radio-demo-2">选项2</label>
-				</div>
+				</div> -->
 			</form>
 		</div>
 	<div class="code-example">
 <pre>
-&lt;div class="form-group"&gt;
-  &lt;label&gt;&lt;span class="text-warning"&gt;＊&lt;/span&gt;我是输入框：&lt;/label&gt;
-  &lt;input class="form-control" type="text" placeholder="我是默认文本"&gt;
-  &lt;span class="close-btn"&gt;x&lt;/span&gt;
+&lt;div class="table-layout"&gt;
+  &lt;div class="row"&gt;
+    &lt;label class="col"&gt;&lt;span class="text-warning"&gt;＊&lt;/span&gt;我是输入框：&lt;/label&gt;
+    &lt;div class="col"&gt;
+      &lt;input class="form-control" type="text" placeholder="我是默认文本"&gt;
+      &lt;span class="close-btn"&gt;x&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+    ...
+  &lt;div class="row"&gt;
+    &lt;label class="col"&gt;&lt;span class="text-warning"&gt;＊&lt;/span&gt;我是一个单选框：&lt;/label&gt;
+    &lt;div class="col"&gt;
+      &lt;input id="radio-demo-1" type="radio" name="radio-demo"&gt;
+      &lt;label class="radio-inline" for="radio-demo-1"&gt;选项1&lt;/label&gt;
+      &lt;input id="radio-demo-2" type="radio" name="radio-demo"&gt;
+      &lt;label class="radio-inline" for="radio-demo-2"&gt;选项2&lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;label&gt;&lt;span class="text-warning"&gt;＊&lt;/span&gt;我是输入框：&lt;/label&gt;
-&lt;input class="form-control" type="text" value="我是已输入文本"&gt;
-
-&lt;label&gt;&lt;span class="text-warning"&gt;＊&lt;/span&gt;我是单选框：&lt;/label&gt;
-&lt;input id="radio-demo-1" type="radio" name="radio-demo"&gt;&lt;label class="radio-inline" for="radio-demo-1"&gt;选项1&lt;/label&gt;
-&lt;input id="radio-demo-2" type="radio" name="radio-demo"&gt;&lt;label class="radio-inline" for="radio-demo-2"&gt;选项2&lt;/label&gt;
 </pre>
 		</div>
 	</div>
@@ -59,151 +95,215 @@
 	<div class="demo">
 		<div class="example">
 			<h4>实例：</h4>
-			<div class="form-group">
+			<div class="table-layout">
+				<div class="row">
+					<label class="col"><span class="text-warning">＊</span>我是输入框：</label>
+					<div class="col">
+						<input class="form-control" type="text" placeholder="我是不可点击文本" disabled>
+					</div>
+				</div>
+			<!-- <div class="form-group">
 				<label><span class="text-warning">＊</span>我是输入框：</label>
 				<input class="form-control" type="text" placeholder="我是不可点击文本" disabled>
+			</div> -->
+				<div class="row">
+					<label class="col"><span class="text-warning">＊</span>我是单选框：</label>
+					<div class="col">
+						<input id="radio-demo-3" type="radio" name="radio-demo" disabled><label class="radio-inline disabled" for="radio-demo-3">选项3</label>
+						<input id="radio-demo-4" type="radio" name="radio-demo" disabled><label class="radio-inline disabled" for="radio-demo-4">选项4</label>
+					</div>
+				</div>
 			</div>
-			<div class="form-group">
+<!-- 			<div class="form-group">
 				<label><span class="text-warning">＊</span>我是单选框：</label>
 				<input id="radio-demo-3" type="radio" name="radio-demo" disabled><label class="radio-inline disabled" for="radio-demo-3">选项3</label>
 				<input id="radio-demo-4" type="radio" name="radio-demo" disabled><label class="radio-inline disabled" for="radio-demo-4">选项4</label>
-			</div>
+			</div> -->
 		</div>
 		<div class="code-example">
 <pre>
-&lt;label&gt;&lt;span class="text-warning"&gt;＊&lt;/span&gt;我是输入框：&lt;/label&gt;
-&lt;input class="form-control" type="text" placeholder="我是不可点击文本" disabled&gt;
-
-&lt;label&gt;&lt;span class="text-warning"&gt;＊&lt;/span&gt;我是单选框：&lt;/label&gt;
-&lt;input id="radio-demo-1" type="radio" name="radio-demo"&gt;&lt;label for="radio-demo-1"&gt;选项1&lt;/label&gt;
-&lt;input id="radio-demo-2" type="radio" name="radio-demo" disabled&gt;&lt;label class="disabled radio-inline" for="radio-demo-2"&gt;选项2&lt;/label&gt;
+&lt;div class="table-layout"&gt;
+  &lt;div class="row"&gt;
+    &lt;label class="col"&gt;&lt;span class="text-warning"&gt;＊&lt;/span&gt;我是输入框：&lt;/label&gt;
+    &lt;div class="col"&gt;
+      &lt;input class="form-control" type="text" placeholder="我是不可点击文本" disabled&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="row"&gt;
+    &lt;label class="col"&gt;&lt;span class="text-warning"&gt;＊&lt;/span&gt;我是单选框：&lt;/label&gt;
+    &lt;div class="col"&gt;
+      &lt;input id="radio-demo-3" type="radio" name="radio-demo" disabled&gt;
+      &lt;label class="radio-inline disabled" for="radio-demo-3"&gt;选项3&lt;/label&gt;
+      &lt;input id="radio-demo-4" type="radio" name="radio-demo" disabled&gt;
+      &lt;label class="radio-inline disabled" for="radio-demo-4"&gt;选项4&lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 </pre>			
 		</div>
 	</div>
-
 	<h2>下拉选择</h2>
 	<p>为需要添加下拉选择样式的输入框添加一个 <mark>.dropdown-input</mark> 的 <mark>div</mark> 标签，为下拉图标添加 <mark>.dropdown-button</mark> 类。</p>
 	<p><strong>按钮样式不在此讨论。</strong></p>
 	<div class="demo">
 		<div class="example">
 			<h4>实例：</h4>
-			<div class="form-group">
-				<label><span class="text-warning">＊</span>我是输入框：</label>
-				<div class="dropdown-input">
-					<input class="form-control" type="text" placeholder="我是可以下拉选择的输入框">
-					<div class="caret-div dropdown-button">
-						<span class="caret dropdown-button"></span>
-					</div>
-				</div>
-			</div>
-			<div class="form-group">
-				<label><span class="text-warning">＊</span>我是输入框：</label>
-				<div class="dropdown dropdown-inline">
-					<div class="dropdown-input" id="dropdownmenu" data-toggle="dropdown">
-						<input class="form-control" type="text" placeholder="我是可以下拉选择的输入框">
-						<div class="caret-div dropdown-button">
-							<span class="caret dropdown-button"></span>
+			<div class="table-layout">
+				<div class="row">
+					<label class="col"><span class="text-warning">＊</span>我是输入框：</label>
+					<div class="col dropdown">
+						<div class="dropdown-input" id="dropdownmenu-2" data-toggle="dropdown">
+							<input class="form-control" type="text" placeholder="我是可以下拉选择的输入框">
+							<div class="caret-div dropdown-button">
+								<span class="caret dropdown-button"></span>
+							</div>
 						</div>
+						<ul class="dropdown-menu" aria-labelledby="dropdownmenu-2">
+							<li><a>123</a></li>
+							<li><a>123</a></li>
+							<li class="divider"></li>
+							<li class="dropdown-header"><a>234</a></li>
+							<li><a>234</a></li>
+							<li><a>234</a></li>
+							<li><a>123</a></li>
+							<li class="divider"></li>
+							<li class="dropdown-header"><a>234</a></li>
+							<li><a>123</a></li>
+							<li class="divider"></li>
+							<li class="dropdown-header"><a>234</a></li>
+						</ul>
 					</div>
-					<ul class="dropdown-menu" aria-labelledby="dropdownmenu">
-						<li><a>123</a></li>
-						<li><a>123</a></li>
-						<li class="divider"></li>
-						<li class="dropdown-header"><a>234</a></li>
-						<li><a>234</a></li>
-						<li><a>234</a></li>
-					</ul>
 				</div>
 			</div>
-
-
-			<div class="form-group">
-				<label><span class="text-warning">＊</span>我是输入框：</label>
-				<div class="dropdown-input">
-					<input class="form-control" type="text" placeholder="我是可以下拉选择的输入框">
-					<button class="btn dropdown-button">按钮</button>
-				</div>
-			</div>
-
-			<div class="form-group">
-				<label><span class="text-warning">＊</span>我是输入框：</label>
-				<div class="dropdown dropdown-inline">
-					<div class="dropdown-input" id="dropdownmenu-2" data-toggle="dropdown">
-						<input class="form-control" type="text" placeholder="我是可以下拉选择的输入框">
-						<button class="btn dropdown-button">按钮</button>
+			<div class="table-layout">
+				<div class="row">
+					<label class="col"><span class="text-warning">＊</span>我是输入框：</label>
+					<div class="col dropdown">
+						<div class="dropdown-input" id="dropdownmenu-2" data-toggle="dropdown">
+							<input class="form-control" type="text" placeholder="我是可以下拉选择的输入框">
+							<button class="btn dropdown-button">按钮</button>
+						</div>
+						<ul class="dropdown-menu" aria-labelledby="dropdownmenu-2">
+							<li><a>123</a></li>
+							<li><a>123</a></li>
+							<li class="divider"></li>
+							<li class="dropdown-header"><a>234</a></li>
+							<li><a>234</a></li>
+							<li><a>234</a></li>
+							<li><a>123</a></li>
+							<li class="divider"></li>
+							<li class="dropdown-header"><a>234</a></li>
+							<li><a>123</a></li>
+							<li class="divider"></li>
+							<li class="dropdown-header"><a>234</a></li>
+						</ul>
 					</div>
-					<ul class="dropdown-menu" aria-labelledby="dropdownmenu-2">
-						<li><a>123</a></li>
-						<li><a>123</a></li>
-						<li class="divider"></li>
-						<li class="dropdown-header"><a>234</a></li>
-						<li><a>234</a></li>
-						<li><a>234</a></li>
-						<li><a>123</a></li>
-						<li class="divider"></li>
-						<li class="dropdown-header"><a>234</a></li>
-						<li><a>123</a></li>
-						<li class="divider"></li>
-						<li class="dropdown-header"><a>234</a></li>
-					</ul>
 				</div>
 			</div>
 		</div>
 		<div class="code-example">
 <pre>
-&lt;div class="form-group"&gt;
-&lt;label&gt;我是输入框：&lt;/label&gt;
-&lt;div class="dropdown-input"&gt;
-  &lt;input class="form-control" type="text" placeholder="我是可以下拉选择的输入框"&gt;
-  &lt;span class="caret dropdown-button"&gt;&lt;/span&gt;
+&lt;div class="table-layout"&gt;
+  &lt;div class="row"&gt;
+    &lt;label class="col"&gt;&lt;span class="text-warning"&gt;＊&lt;/span&gt;我是输入框：&lt;/label&gt;
+    &lt;div class="col dropdown"&gt;
+      &lt;div class="dropdown-input" id="dropdownmenu-2" data-toggle="dropdown"&gt;
+        &lt;input class="form-control" type="text" placeholder="我是可以下拉选择的输入框"&gt;
+        &lt;div class="caret-div dropdown-button"&gt;
+          &lt;span class="caret dropdown-button"&gt;&lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;ul class="dropdown-menu" aria-labelledby="dropdownmenu-2"&gt;
+      ...
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div class="dropdown-input"&gt;
-  &lt;input class="form-control" type="text" placeholder="我是可以下拉选择的输入框"&gt;
-  &lt;button class="btn dropdown-button"&gt;按钮&lt;/button&gt;
+&lt;div class="table-layout"&gt;
+  &lt;div class="row"&gt;
+  ...
+    &lt;div class="col dropdown"&gt;
+      &lt;div class="dropdown-input" id="dropdownmenu-2" data-toggle="dropdown"&gt;
+        &lt;input class="form-control" type="text" placeholder="我是可以下拉选择的输入框"&gt;
+        &lt;button class="btn dropdown-button"&gt;按钮&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;ul class="dropdown-menu" aria-labelledby="dropdownmenu-2"&gt;
+      ...
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
 </pre>
 		</div>
 	</div>
 	<h2>提示信息</h2>
-	<p>为 <mark>.form-group</mark> 设置了属性 <mark>position: relative</mark> ，提示信息(<mark>.tips-info</mark>)和错误提示信息(<mark>.error</mark>)为绝对定位。在有提示信息的情况下，如果出错，错误提示信息覆盖提示信息。</p>
+	<p>为 <mark>.col</mark> 设置了属性 <mark>position: relative</mark> ，提示信息(<mark>.tips-info</mark>)和错误提示信息(<mark>.error</mark>)为绝对定位。在有提示信息的情况下，如果出错，错误提示信息覆盖提示信息。</p>
 	<p>实例中为了体现效果，额外给输入框元素加上错误样式。</p>
-	<p>P.S. 给textarea的label添加 <mark>.textarea-label</mark> 的类，确保标签文字与输入框上方对齐。</p>
+	<p>P.S. 给textarea的label添加 <mark>.col.top</mark> 类，确保标签文字与输入框上方对齐。</p>
 	<div class="demo">
 		<div class="example">
 			<h4>实例：</h4>
-			<div class="form-group">
+			<div class="table-layout">
+				<div class="row">
+					<label class="col top">我是输入框：</label>
+					<div class="col">
+						<div class="row">
+							<input class="col" id="checkbox-demo" type="checkbox" name="checkbox-demo"><label for="checkbox-demo">复选框</label>
+						</div>
+						<div class="row">
+							<div class="col">
+								<textarea class="form-control" name="textarea-demo" id="textarea-demo" rows="5" placeholder="这是一个文本区域"></textarea>
+							<label class="tips-info">这是提示信息</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="table-layout">
+				<div class="row">
+					<label class="col top">我是输入框：</label>
+					<div class="col">
+						<textarea class="form-control error" name="textarea-demo" id="textarea-demo" rows="5"></textarea>
+						<label class="error">这是错误提示信息</label>
+					</div>
+				</div>
+			</div>
+<!-- 			<div class="form-group">
 					<label>我是输入框：</label>
 					<input id="checkbox-demo" type="checkbox" name="checkbox-demo"><label for="checkbox-demo">复选框</label>
 					<div class="form-group">
 						<label class="invisible textarea-label">我是输入框：</label>
-						<!-- <div class="help-block-group"> -->
-							<textarea class="form-control" name="textarea-demo" id="textarea-demo" rows="5" placeholder="这是一个文本区域"></textarea>
-							<label class="tips-info">这是提示信息</label>
-						<!-- </div> -->
+						<textarea class="form-control" name="textarea-demo" id="textarea-demo" rows="5" placeholder="这是一个文本区域"></textarea>
+						<label class="tips-info">这是提示信息</label>
 					</div>
-				</div>
-				<div class="form-group">
+				</div> -->
+<!-- 				<div class="form-group">
 					<label class="textarea-label">我是输入框：</label>
-					<!-- <div class="help-block-group"> -->
-						<textarea class="form-control error" name="textarea-demo" id="textarea-demo" rows="5"></textarea>
-						<label class="error">这是错误提示信息</label>
-					<!-- </div> -->
-				</div>
+					<textarea class="form-control error" name="textarea-demo" id="textarea-demo" rows="5"></textarea>
+					<label class="error">这是错误提示信息</label>
+				</div> -->
 		</div>
 		<div class="code-example">
 <pre>
-&lt;label&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;我是输入框：&lt;/label&gt;
-&lt;input id="checkbox-demo" type="checkbox" name="checkbox-demo"&gt;&lt;label for="checkbox-demo"&gt;复选框&lt;/label&gt;
-&lt;div class="form-group"&gt;
-  &lt;label class="invisible textarea-label"&gt;我是输入框：&lt;/label&gt;
-  &lt;textarea class="form-control" name="textarea-demo" id="textarea-demo" rows="5"&gt;&lt;/textarea&gt;
-  &lt;label class="tips-info"&gt;这是提示信息&lt;/label&gt;
+&lt;label class="col top"&gt;我是输入框：&lt;/label&gt;
+&lt;div class="col"&gt;
+&lt;div class="row"&gt;
+  &lt;input class="col" id="checkbox-demo" type="checkbox" name="checkbox-demo"&gt;
+  &lt;label for="checkbox-demo"&gt;复选框&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+  &lt;div class="col"&gt;
+    &lt;textarea class="form-control" name="textarea-demo" id="textarea-demo" rows="5" placeholder="这是一个文本区域"&gt;&lt;/textarea&gt;
+    &lt;label class="tips-info"&gt;这是提示信息&lt;/label&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;label class="textarea-label"&gt;我是输入框：&lt;/label&gt;
-  &lt;textarea class="form-control error" name="textarea-demo" id="textarea-demo" rows="5" placeholder="这是一个文本区域"&gt;&lt;/textarea&gt;
+&lt;label class="col top"&gt;我是输入框：&lt;/label&gt;
+&lt;div class="col"&gt;
+  &lt;textarea class="form-control error" name="textarea-demo" id="textarea-demo" rows="5"&gt;&lt;/textarea&gt;
   &lt;label class="error"&gt;这是错误提示信息&lt;/label&gt;
+&lt;/div&gt;
 </pre>
 		</div>
 	</div>
@@ -291,22 +391,7 @@
 &lt;/div&gt;
 </pre>
 		</div>
-	</div>
-
-<div class="dropdown">
-	<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-expanded="true">
-	    下拉列表
-    	<span class="caret"></span>
-  		</button>
-	<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownmenu">
-		<li><a>111</a></li>
-		<li><a>111</a></li>
-		<li><a>111</a></li>
-		<li><a>111</a></li>
-		<li><a>111</a></li>
-	</ul>
-</div>
-	
+	</div>	
 
 	<script src="jquery-2.1.1.js"></script>
 	<script src="bootstrap-self/js/bootstrap.js"></script>

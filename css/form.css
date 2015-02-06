@@ -52,8 +52,8 @@ label.tips-info,label.error{
 	position: absolute;
 	padding-left: 0;
 	margin-bottom: 10px;
-	left: 160px;/*跟随label的宽度改变*/
-	bottom: -30px;
+	left: 5px;
+	bottom: -16px;
 	width: 100%;
 	background-color: #fff;
 	text-align: left;
