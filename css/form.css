@@ -1,3 +1,6 @@
+.col input[type="text"],.col textarea,.dropdown-menu{
+	width: 675px;/*宽度自定*/
+}
 input[type="radio"]+label,input[type="checkbox"]+label{
 	width: auto;
 	padding-left: 10px;
@@ -8,6 +11,7 @@ input[type="radio"]+label,input[type="checkbox"]+label{
 }
 textarea{
 	resize: none;
+	font-size: 14px;
 }
 .dropdown-input{
 	display: inline;
@@ -20,12 +24,10 @@ textarea{
 	position: absolute;
 	cursor: pointer;
 }
-.dropdown-button.caret-div{
+.dropdown-button.caret{
 	display: inline-block;
-	right: 30px;
-	top: -5px;
-	width:20px;
-	height: 26px;
+	right: 38px;
+	top: 4px;
 	background-color: #fff;
 }
 .dropdown-button.btn{
@@ -81,7 +83,7 @@ textarea.error:focus
 	margin-bottom: 0;
 }
 .multi-col-form label{
-	width: 122px;
+	width: 98px;
 	text-align: right;
 	padding-right: 12px;
 }
@@ -95,6 +97,18 @@ textarea.error:focus
 /*.multi-col-form input[type="text"]{
 	width:180px;
 }*/
+.multi-col-form input[type="text"],.multi-col-form ul{
+	width:200px;
+}
+.multi-col-form .dropdown-block{
+	display: inline;
+	position: relative;
+}
+.multi-col-form .dropdown-block ul{
+	left: 0;
+	top: 16px;
+}
+
 /*表单－多列－end*/
 .close-btn{
 	color: #c7c7c7;

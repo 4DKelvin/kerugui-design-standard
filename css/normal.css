@@ -26,11 +26,12 @@ body{
 	border-bottom: 0;
 }
 .content>h1{
-	padding-top: 70px;
+	padding-top: 50px;
 }
 .demo{
 	border: 1px solid #eee;
 	border-radius: 5px;
+	margin-bottom: 23px;
 }
 .example,.code-example{
 	padding: 10px 20px;
@@ -75,4 +76,31 @@ body{
 }
 .color-6{
 	background-color: #0075d8;
+}
+.text-color-1{
+	color: #474747;
+	font-weight: 900;
+}
+.text-color-2{
+	color: #24bb32;
+	font-weight: 900;
+}
+.text-color-3{
+	color: #737373;
+	font-weight: 900;
+}
+.text-color-4{
+	color: #ff4800;
+	font-weight: 900;
+}
+.text-color-5{
+	color: #a7a7a7;
+	font-weight: 900;
+}
+.text-color-6{
+	color: #0075d8;
+	font-weight: 900;
+}
+mark{
+	font-weight: 900;
 }

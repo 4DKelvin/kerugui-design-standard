@@ -2567,10 +2567,15 @@ input[type="text"],textarea,select{
   color: #a7a7a7;
 }
 .form-control[disabled],
-.form-control[readonly],
+/*.form-control[readonly],*/
 fieldset[disabled] .form-control {
   cursor: not-allowed;
   background-color: #e1e1e1;
+  opacity: 1;
+}
+[readonly]{
+  cursor: pointer;
+  background-color: #fff;
   opacity: 1;
 }
 textarea.form-control {
@@ -2999,7 +3004,7 @@ select[multiple].form-group-lg .form-control {
 .btn:active.focus,
 .btn.active.focus {
   /*outline: thin dotted;*/
-  outline: 5px auto -webkit-focus-ring-color;
+  /*outline: 2px auto -webkit-focus-ring-color;*/
   outline-offset: -2px;
 }
 .btn:hover,
@@ -3404,7 +3409,7 @@ tbody.collapse.in {
   height: 0;
   margin-left: 2px;
   vertical-align: middle;
-  border-top: 6px solid;
+  border-top: 8px solid #a1a1a1;
   border-right: 6px solid transparent;
   border-left: 6px solid transparent;
 }

@@ -1,0 +1,70 @@
+.btn.btn-lg {
+  min-width: 120px;
+  letter-spacing: 2px;
+}
+
+.btn.btn-blue {
+  box-shadow: 0 0 3px #f3f3f3 inset;
+  border-radius: 5px;
+  background: -webkit-linear-gradient(#46A3DF, #2480CF);
+  background: -o-linear-gradient(#46A3DF, #2480CF);
+  background: -moz-linear-gradient(#46A3DF, #2480CF);
+  background: linear-gradient(#46A3DF, #2480CF);
+  border: 1px solid #0B82B0;
+  color: #f3f3f3;
+}
+.btn.btn-blue:active, .btn.btn-blue:hover, .btn.btn-blue:focus {
+  background: -webkit-linear-gradient(#2480CF, #46A3DF);
+  background: -o-linear-gradient(#2480CF, #46A3DF);
+  background: -moz-linear-gradient(#2480CF, #46A3DF);
+  background: linear-gradient(#2480CF, #46A3DF);
+  border: 1px solid #0B82B0;
+  color: #f3f3f3;
+}
+.btn.btn-green {
+  box-shadow: 0 0 3px #f3f3f3 inset;
+  border-radius: 5px;
+  background: -webkit-linear-gradient(#76D031, #57BE2B);
+  background: -o-linear-gradient(#76D031, #57BE2B);
+  background: -moz-linear-gradient(#76D031, #57BE2B);
+  background: linear-gradient(#76D031, #57BE2B);
+  border: 1px solid #318A1E;
+  color: #f3f3f3;
+}
+  .btn.btn-green:active, .btn.btn-green:hover, .btn.btn-green:focus {
+    background: -webkit-linear-gradient(#57BE2B, #76D031);
+    background: -o-linear-gradient(#57BE2B, #76D031);
+    background: -moz-linear-gradient(#57BE2B, #76D031);
+    background: linear-gradient(#57BE2B, #76D031);
+    border: 1px solid #318A1E;
+    color: #f3f3f3;
+}
+
+.btn.btn-blue-light {
+  box-shadow: 0 0 3px #f3f3f3 inset;
+  border-radius: 5px;
+  background: -webkit-linear-gradient(#F7F9FA, #E8EFF4);
+  background: -o-linear-gradient(#F7F9FA, #E8EFF4);
+  background: -moz-linear-gradient(#F7F9FA, #E8EFF4);
+  background: linear-gradient(#F7F9FA, #E8EFF4);
+  border: 1px solid #C7D8E4;
+  color: #758796;
+  letter-spacing: 0;
+}
+.btn.btn-blue-light:active,
+.btn.btn-blue-light:hover,
+.btn.btn-blue-light:focus {
+  background: -webkit-linear-gradient(#E8EFF4, #F7F9FA);
+  background: -o-linear-gradient(#E8EFF4, #F7F9FA);
+  background: -moz-linear-gradient(#E8EFF4, #F7F9FA);
+  background: linear-gradient(#E8EFF4, #F7F9FA);
+  border: 1px solid #C7D8E4;
+  color: #758796;
+}
+
+.btn.btn-blue.dropdown-button,
+.btn.btn-green.dropdown-button,
+.btn.btn-blue-light.dropdown-button
+{
+  border-radius: 0;
+}
