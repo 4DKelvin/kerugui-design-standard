@@ -1,14 +1,6 @@
 .col input[type="text"],.col textarea,.dropdown-menu{
 	width: 675px;/*宽度自定*/
 }
-input[type="radio"]+label,input[type="checkbox"]+label{
-	width: auto;
-	padding-left: 10px;
-	margin-right: 20px;
-	font-weight: normal;
-	margin-bottom: 0;
-	text-align: left;
-}
 textarea{
 	resize: none;
 	font-size: 14px;
@@ -16,10 +8,10 @@ textarea{
 .dropdown-input{
 	display: inline;
 	position: relative;
-}
+}/*
 .dropdown-input>input{
 	padding-right: 26px;
-}
+}*/
 .dropdown-input>.dropdown-button{
 	position: absolute;
 	cursor: pointer;
@@ -47,8 +39,13 @@ label{
 	width: 160px;/*label长度，可能需要修改*/
 	text-align: right;
 }
-label.textarea-label{
-	vertical-align: top;
+input[type="radio"]+label,input[type="checkbox"]+label{
+	width: auto;
+	padding-left: 10px;
+	margin-right: 20px;
+	font-weight: normal;
+	margin-bottom: 0;
+	text-align: left;
 }
 label.tips-info,label.error{
 	position: absolute;
@@ -85,7 +82,7 @@ textarea.error:focus
 .multi-col-form label{
 	width: 98px;
 	text-align: right;
-	padding-right: 12px;
+	padding-right: 10px;
 }
 .form-group-col{
 	display: inline-block;
@@ -94,9 +91,6 @@ textarea.error:focus
 	padding-right: 0;
 	/*min-width: 340px;*/
 }
-/*.multi-col-form input[type="text"]{
-	width:180px;
-}*/
 .multi-col-form input[type="text"],.multi-col-form ul{
 	width:200px;
 }
@@ -108,8 +102,8 @@ textarea.error:focus
 	left: 0;
 	top: 16px;
 }
-
 /*表单－多列－end*/
+
 .close-btn{
 	color: #c7c7c7;
 	font-size: 18px;
@@ -117,7 +111,4 @@ textarea.error:focus
 }
 .close-btn:hover{
 	color: #a7a7a7;
-}
-.dropdown.dropdown-inline{
-	display: inline;
 }

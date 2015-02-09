@@ -13,7 +13,9 @@
   border: 1px solid #0B82B0;
   color: #f3f3f3;
 }
-.btn.btn-blue:active, .btn.btn-blue:hover, .btn.btn-blue:focus {
+.btn.btn-blue:active, 
+.btn.btn-blue:hover, 
+.btn.btn-blue:focus {
   background: -webkit-linear-gradient(#2480CF, #46A3DF);
   background: -o-linear-gradient(#2480CF, #46A3DF);
   background: -moz-linear-gradient(#2480CF, #46A3DF);
@@ -31,15 +33,16 @@
   border: 1px solid #318A1E;
   color: #f3f3f3;
 }
-  .btn.btn-green:active, .btn.btn-green:hover, .btn.btn-green:focus {
-    background: -webkit-linear-gradient(#57BE2B, #76D031);
-    background: -o-linear-gradient(#57BE2B, #76D031);
-    background: -moz-linear-gradient(#57BE2B, #76D031);
-    background: linear-gradient(#57BE2B, #76D031);
-    border: 1px solid #318A1E;
-    color: #f3f3f3;
+.btn.btn-green:active, 
+.btn.btn-green:hover, 
+.btn.btn-green:focus {
+  background: -webkit-linear-gradient(#57BE2B, #76D031);
+  background: -o-linear-gradient(#57BE2B, #76D031);
+  background: -moz-linear-gradient(#57BE2B, #76D031);
+  background: linear-gradient(#57BE2B, #76D031);
+  border: 1px solid #318A1E;
+  color: #f3f3f3;
 }
-
 .btn.btn-blue-light {
   box-shadow: 0 0 3px #f3f3f3 inset;
   border-radius: 5px;
