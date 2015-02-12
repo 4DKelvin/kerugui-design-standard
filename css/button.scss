@@ -1,0 +1,86 @@
+$btn-shadow: #f3f3f3;
+
+$blue-btn-1: #46A3DF;
+$blue-btn-2: #2480CF;
+$blue-btn-border: #0B82B0;
+
+$green-btn-1: #76D031;
+$green-btn-2: #57BE2B;
+$green-btn-border: #318A1E;
+
+$blue-light-btn-1: #F7F9FA;
+$blue-light-btn-2: #E8EFF4;
+$blue-light-btn-text: #758796;
+$blue-light-btn-border: #C7D8E4;
+
+.btn.btn-lg {
+  min-width: 120px;
+  letter-spacing: 2px;
+}
+.btn.btn-blue {
+  box-shadow: 0 0 3px $btn-shadow inset;
+  border-radius: 5px;
+  background: -webkit-linear-gradient($blue-btn-1, $blue-btn-2);
+  background: -o-linear-gradient($blue-btn-1, $blue-btn-2);
+  background: -moz-linear-gradient($blue-btn-1, $blue-btn-2);
+  background: linear-gradient($blue-btn-1, $blue-btn-2);
+  border: 1px solid $blue-btn-border:;
+  color: $btn-shadow;
+  &:active, 
+  &:hover, 
+  &:focus {
+    background: -webkit-linear-gradient($blue-btn-2, $blue-btn-1);
+    background: -o-linear-gradient($blue-btn-2, $blue-btn-1);
+    background: -moz-linear-gradient($blue-btn-2, $blue-btn-1);
+    background: linear-gradient($blue-btn-2, $blue-btn-1);
+    border: 1px solid $blue-btn-border:;
+    color: $btn-shadow;
+  }
+}
+.btn.btn-green {
+  box-shadow: 0 0 3px $btn-shadow inset;
+  border-radius: 5px;
+  background: -webkit-linear-gradient($green-btn-1, $green-btn-2);
+  background: -o-linear-gradient($green-btn-1, $green-btn-2);
+  background: -moz-linear-gradient($green-btn-1, $green-btn-2);
+  background: linear-gradient($green-btn-1, $green-btn-2);
+  border: 1px solid $green-btn-border;
+  color: $btn-shadow;
+  &:active, 
+  &:hover, 
+  &:focus {
+    background: -webkit-linear-gradient($green-btn-2, $green-btn-1);
+    background: -o-linear-gradient($green-btn-2, $green-btn-1);
+    background: -moz-linear-gradient($green-btn-2, $green-btn-1);
+    background: linear-gradient($green-btn-2, $green-btn-1);
+    border: 1px solid $green-btn-border;
+    color: $btn-shadow;
+  }
+}
+.btn.btn-blue-light {
+  box-shadow: 0 0 3px $btn-shadow inset;
+  border-radius: 5px;
+  background: -webkit-linear-gradient($blue-light-btn-1, $blue-light-btn-2);
+  background: -o-linear-gradient($blue-light-btn-1, $blue-light-btn-2);
+  background: -moz-linear-gradient($blue-light-btn-1, $blue-light-btn-2);
+  background: linear-gradient($blue-light-btn-1, $blue-light-btn-2);
+  border: 1px solid $blue-light-btn-border;
+  color: $blue-light-btn-text;
+  letter-spacing: 0;
+  &:active,
+  &:hover,
+  &:focus {
+    background: -webkit-linear-gradient($blue-light-btn-2, $blue-light-btn-1);
+    background: -o-linear-gradient($blue-light-btn-2, $blue-light-btn-1);
+    background: -moz-linear-gradient($blue-light-btn-2, $blue-light-btn-1);
+    background: linear-gradient($blue-light-btn-2, $blue-light-btn-1);
+    border: 1px solid $blue-light-btn-border;
+    color: $blue-light-btn-text;
+  }
+}
+.btn.btn-blue.dropdown-button,
+.btn.btn-green.dropdown-button,
+.btn.btn-blue-light.dropdown-button
+{
+  border-radius: 0;
+}

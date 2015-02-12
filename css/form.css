@@ -1,28 +1,27 @@
-.col input[type="text"],.col textarea,.dropdown-menu{
+.col input[type="text"],.col textarea,form .dropdown-menu{
 	width: 675px;/*宽度自定*/
 }
+
 textarea{
 	resize: none;
 	font-size: 14px;
 }
-.dropdown-input{
+/*菜单下拉输入框*/
+form .dropdown-input{
 	display: inline;
 	position: relative;
-}/*
-.dropdown-input>input{
-	padding-right: 26px;
-}*/
-.dropdown-input>.dropdown-button{
+}
+form .dropdown-input>.dropdown-button{
 	position: absolute;
 	cursor: pointer;
 }
-.dropdown-button.caret{
+form .dropdown-button.caret{
 	display: inline-block;
 	right: 38px;
 	top: 4px;
 	background-color: #fff;
 }
-.dropdown-button.btn{
+form .dropdown-button.btn{
 	padding: 0;
 	height: 36px;
 	width: 90px;
@@ -89,7 +88,7 @@ textarea.error:focus
 	margin-bottom: 28px;
 	margin-right: 0;
 	padding-right: 0;
-	/*min-width: 340px;*/
+	/*min-width: 360px;*/
 }
 .multi-col-form input[type="text"],.multi-col-form ul{
 	width:200px;
